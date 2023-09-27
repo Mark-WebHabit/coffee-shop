@@ -1,0 +1,5 @@
+Wed Sep 27 2023 22:16pm				POST			/auth/login			500			secret option required for sessions
+Wed Sep 27 2023 22:17pm				POST			/auth/login			500			secret option required for sessions
+Wed Sep 27 2023 22:23pm				POST			/auth/login			500			All fields are required
+Wed Sep 27 2023 22:23pm				POST			/auth/login			500			All fields are required
+Wed Sep 27 2023 22:23pm				POST			/auth/login			500			All fields are required

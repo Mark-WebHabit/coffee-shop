@@ -54,6 +54,7 @@ const Login = ({ authPage, handlePage }) => {
       // check if username or email of the state is empty
       if (!usernameOrEmail || usernameOrEmail === "") {
         setError("Username or email is required");
+        return;
       }
       const response = await instance.post("/auth/login", {
         usernameOrEmail,
@@ -63,7 +64,15 @@ const Login = ({ authPage, handlePage }) => {
         console.log(response);
       }
     } catch (error) {
-      console.log(error);
+      if (error.response && error.response.status) {
+        // The error is an Axios response error with a status code
+        setError(error.response.data.message);
+        console.log("Axios Response Error Data:", error.response.data);
+      } else {
+        // The error is not an Axios response error
+        setError("Something went wrong");
+        console.error("Non-Axios Error:", error);
+      }
     } finally {
       setLoading(false);
     }
