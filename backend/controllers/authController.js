@@ -31,7 +31,7 @@ const register = asyncHandler(async (req, res) => {
 
   if (existingUser.length) {
     //if a user has been found with the same username
-    if (existingUser.username === username) {
+    if (existingUser[0].username === username) {
       return res.status(409).json({ message: "Username already exists" });
     } else {
       return res.status(409).json({ message: "Email already exists" });

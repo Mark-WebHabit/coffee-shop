@@ -11,13 +11,6 @@ export const stateLengthValidator = (state, length) => {
   return true;
 };
 
-export const passwordVerifier = (password, comparer) => {
-  if (password !== comparer) {
-    return false;
-  }
-  return true;
-};
-
 export const handleStateChange = (setter, field, val) => {
   setter((oldValue) => ({ ...oldValue, [field]: val }));
 };

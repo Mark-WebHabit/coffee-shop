@@ -32,6 +32,7 @@ const Login = ({ authPage, handlePage }) => {
   const handleStateClear = () => {
     clearState(setFormData, formData);
     setStateCleared(true);
+    setError(null);
   };
 
   // automatically set the statecleared to false if it was set to true
@@ -60,8 +61,8 @@ const Login = ({ authPage, handlePage }) => {
         usernameOrEmail,
         password,
       });
-      if (response.data.data) {
-        console.log(response);
+      if (response.data) {
+        console.log(response.data);
       }
     } catch (error) {
       if (error.response && error.response.status) {
